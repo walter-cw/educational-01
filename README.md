@@ -1,16 +1,10 @@
-<div class="alert alert-block alert-info">
-In this lesson we will create a job in Jenkins which picks up a simple "Hello World" python script, builds and runs the python code. Our example will be very simple but you can manage complex applications.
-</div>
+In this handson we will create a job in Jenkins which picks up a simple "Hello World" python script, builds and runs the python code. Our example will be very simple but you can manage complex applications.
 
 The freestyle build job is a highly flexible and easy-to-use option. You can use it for any type of project; it is easy to set up, and many of its options appear in other build jobs.
 
-<div class="alert alert-success" role="alert">
  1 - To create a Jenkins freestyle job, open your Jenkins installation path. It will be hosted on <b>http://localhost:8080</b> or <b>http://ec2-ip-address:8080</b> If you have installed to different port, please use this port number. Then log on to your Jenkins dashboard with username and password.
-</div>
 
-|<center><img src="https://media.clarusway.com/Jenkins/3-1-1-1-browser.png" class="img-fluid" alt=""></center>|
-|:--:|
-|*Log on page*|
+<center><img src="https://media.clarusway.com/Jenkins/3-1-1-1-browser.png"></center>
 
 <div class="alert alert-success" role="alert">  
 2 - Open your Jenkins dashboard and click on <b>New Item</b> to create a new item.

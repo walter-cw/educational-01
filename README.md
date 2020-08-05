@@ -1,28 +1,67 @@
-In this handson we will create a job in Jenkins which picks up a simple "Hello World" python script, builds and runs the python code. Our example will be very simple but you can manage complex applications.
+# Hands-on Jenkins-02 : Creating first Jenkins Job on Amazon Linux 2 AWS EC2 Instance
 
-The freestyle build job is a highly flexible and easy-to-use option. You can use it for any type of project; it is easy to set up, and many of its options appear in other build jobs.
+Purpose of the this hands-on training is to teach the students how to create Jenkins jobs on Amazon Linux 2 EC2 instance.
 
- 1 - To create a Jenkins freestyle job, open your Jenkins installation path. It will be hosted on <b>http://localhost:8080</b> or <b>http://ec2-ip-address:8080</b> If you have installed to different port, please use this port number. Then log on to your Jenkins dashboard with username and password.
+## Learning Outcomes
 
-<img src="https://media.clarusway.com/Jenkins/3-1-1-1-browser.png"
-     alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
-[<img src="https://media.clarusway.com/Jenkins/3-1-1-1-browser.png">]
+At the end of the this hands-on training, students will be able to;
 
-<div class="alert alert-success" role="alert">  
-2 - Open your Jenkins dashboard and click on <b>New Item</b> to create a new item.
-</div>
-|<center><img src="https://media.clarusway.com/Jenkins/3-1-2-create-a-new-item.png" class="img-fluid" alt=""></center>|
-|:--:|
-|*Create new item*|
+- create Jenkins Jobs on Amazon Linux 2 EC2 instance
 
-<div class="alert alert-success" role="alert">  
-3 - Enter the <b>item name</b> then select <b>free style project</b> and click to <b>OK</b>.
-</div>
+## Outline
 
-|<center><img src="https://media.clarusway.com/Jenkins/3-2-2.png" class="img-fluid" alt=""></center>|
-|:--:|
-|*Create project*|
+- Part 1 - Launch Amazon Linux 2 EC2 Instance and Connect with SSH
+
+- Part 2 - Install Jenkins on Amazon Linux 2 EC2 Instance
+
+- Part 3 - Open Jenkins dashboard and explain plugins and other jenkins menu elements
+
+- Part 4 - Create first Jenkins Job
+
+## Part 1 - Launch Amazon Linux 2 EC2 Instance and Connect with SSH
+
+- Launch an EC2 instance using the Amazon Linux 2 AMI with security group allowing SSH connections.
+
+- Connect to your instance with SSH.
+
+```bash
+ssh -i .ssh/call-training.pem ec2-user@ec2-3-133-106-98.us-east-2.compute.amazonaws.com
+```
+
+## Part 2 - Install Docker on Amazon Linux 2 EC2 Instance
+
+
+## Part 3 - Open Jenkins dashboard and explain plugins and other jenkins menu elements
+
+- Open plugins menu and download some plugins,
+
+- Explain Items tab at menu
+
+- Explain Manage Jenkins tab at menu
+
+- Explain other Jenkins terminology
+
+## Part 4 - Create First Jenkins Job on Amazon Linux 2 EC2 Instance
+
+
+- In this handson we will create a job in Jenkins which picks up a simple "Hello World" python script, builds and runs the python code. Our example will be very simple but you can manage complex applications.
+
+- The freestyle build job is a highly flexible and easy-to-use option. You can use it for any type of project; it is easy to set up, and many of its options appear in other build jobs.
+
+* To create a Jenkins freestyle job, open your Jenkins installation path. It will be hosted on <b>http://localhost:8080</b> or <b>http://ec2-ip-address:8080</b> If you have installed to different port, please use this port number. Then log on to your Jenkins dashboard with username and password.
+
+<img src="https://media.clarusway.com/Jenkins/3-1-1-1-browser.png">
+
+* Open your Jenkins dashboard and click on <b>New Item</b> to create a new item.
+
+<img src="https://media.clarusway.com/Jenkins/3-1-2-create-a-new-item.png">
+
+
+
+* Enter the <b>item name</b> then select <b>free style project</b> and click to <b>OK</b>.
+
+<img src="https://media.clarusway.com/Jenkins/3-2-2.png">
+
 
 While creating first Project you will see four tab. These are:
 
@@ -32,60 +71,53 @@ While creating first Project you will see four tab. These are:
 4. Build : Optional steps to collect information out of the build, such as archiving the artifacts and/or recording javadoc and test results.
 5. Post-build Actions : Optional steps to notify other people/systems with the build result, such as sending e-mails, IMs, updating issue tracker, etc.
 
-<div class="alert alert-success" role="alert">  
-4 - Specify your Jenkins project's <b>description</b>. Then go to <b>Build</b>.
-</div>
 
-|<center><img src="https://media.clarusway.com/Jenkins/3-+description.png" class="img-fluid" alt=""></center>|
-|:--:|
-|*Description*|
+* Specify your Jenkins project's <b>description</b>. Then go to <b>Build</b>.
 
-<div class="alert alert-success" role="alert">  
-5 - Choose appropriate build step from "Add build step". It depends on your operating system.  If you are windows user you can choose <b>Execute Windows batch command</b> or if you are using  Linux or MacOS operating system, you can choose <b>Execute shell</b>.
-</div> 
+
+<img src="https://media.clarusway.com/Jenkins/3-+description.png">
+
+
+
+* Choose appropriate build step from "Add build step". It depends on your operating system.  If you are windows user you can choose <b>Execute Windows batch command</b> or if you are using  Linux or MacOS operating system, you can choose <b>Execute shell</b>.
+
 
 |<center><img src="https://media.clarusway.com/Jenkins/3-build.png" class="img-fluid" alt=""></center>|
-|:--:|
-|*Add build step*|
 
-<div class="alert alert-success" role="alert">  
-6 - When you select the build step, command space will be shown. Write down just <b>echo "Hello World"</b> to execute shell command/windows batch command.
-</div> 
+
+
+* When you select the build step, command space will be shown. Write down just <b>echo "Hello World"</b> to execute shell command/windows batch command.
+
 
 |<center><img src="https://media.clarusway.com/Jenkins/jenkins-build-command.png" class="img-fluid" alt=""></center>|
-|:--:|
-|*Build Command*|
 
-<div class="alert alert-success" role="alert">  
-7 - Then click <b>apply</b>  and <b>save</b>  button.
-</br></br>
-8 - After that you will see inside of the Project. Then click to <b>Build now</b> and wait e few seconds. You will see result of this build action under the <b>Build History</b>
-</div> 
+
+
+* Then click **apply**  and **save**  button.
+
+* After that you will see inside of the Project. Then click to <b>Build now</b> and wait e few seconds. You will see result of this build action under the **Build History**
+
 
 |<center><img src="https://media.clarusway.com/Jenkins/3-build-now.png" class="img-fluid" alt=""></center>|
-|:--:|
-|*Add build step*|
 
-<div class="alert alert-success" role="alert">  
-9 - As we mentioned above you will see the results of the build. If you click to the build number, you can reach build page. If you see the number blue that means build worked well.
-</div> 
+
+
+* As we mentioned above you will see the results of the build. If you click to the build number, you can reach build page. If you see the number blue that means build worked well.
+
 
 |<center><img src="https://media.clarusway.com/Jenkins/3-build-history.png" class="img-fluid" alt=""></center>|
-|:--:|
-|*Click the build number*|
 
-<div class="alert alert-success" role="alert">  
-10 - From build page you can see console results from "Console Output".
-</div> 
+
+
+* From build page you can see console results from "Console Output".
+
 
 |<center><img src="https://media.clarusway.com/Jenkins/3-console-output1.png" class="img-fluid" alt=""></center>|
-|:--:|
-|*Build Page*|
 
-<div class="alert alert-success" role="alert">  
-11 - You can see results of your build. As you can see our result our job printed out to "Hello World" and it finished with "SUCCESS".
-</div> 
+
+
+* You can see results of your build. As you can see our result our job printed out to "Hello World" and it finished with "SUCCESS".
+
 
 |<center><img src="https://media.clarusway.com/Jenkins/3-console-output.png" class="img-fluid" alt=""></center>|
-|:--:|
-|*Console Output*|
+

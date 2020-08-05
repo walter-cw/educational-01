@@ -30,6 +30,99 @@ ssh -i .ssh/call-training.pem ec2-user@ec2-3-133-106-98.us-east-2.compute.amazon
 
 ## Part 2 - Install Jenkins on Amazon Linux 2 EC2 Instance using Docker
 
+- Launch an AWS EC2 instance of Amazon Linux 2 AMI with security group allowing SSH and Tomcat 
+(8080) ports and name it as `call-jenkins` 
+
+- Connect to the `call-jenkins` instance with SSH.
+
+```bash
+ssh -i .ssh/call-training.pem ec2-user@ec2-3-133-106-98.us-east-2.compute.amazonaws.com
+```
+
+- Update the installed packages and package cache on your instance.
+
+```bash
+sudo yum update -y
+```
+
+- Install the most recent Docker Community Edition package.
+
+```bash
+sudo amazon-linux-extras install docker -y
+```
+
+- Start docker service.
+
+```bash
+sudo systemctl start docker
+```
+
+- Enable docker service so that docker service can restart automatically after reboots.
+
+```bash
+sudo systemctl enable docker
+```
+
+- Check if the docker service is up and running.
+
+```bash
+sudo systemctl status docker
+```
+
+- Add the `ec2-user` to the `docker` group to run docker commands without using `sudo`. 
+
+```bash
+sudo usermod -a -G docker ec2-user
+```
+
+- Normally, the user needs to re-login into bash shell for the group `docker` to be effective, but `newgrp` command can be used activate `docker` group for `ec2-user`, not to re-login into bash shell.
+
+```bash
+newgrp docker
+```
+
+- Check the docker version without `sudo`.
+
+```bash
+docker version
+```
+
+- Run docker jenkins image from Dockerhub Jenkins.
+
+```bash
+docker run \
+  -u root \
+  --rm \
+  -d \
+  -p 8080:8080 \
+  -p 50000:50000 \
+  --name jenkins \
+  -v jenkins-data:/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  jenkins/jenkins:lts
+```
+
+- Get the administrator password from `var/jenkins_home/secrets/initialAdminPassword` file.
+
+```bash
+docker exec -it jenkins bash
+cat /var/jenkins_home/secrets/initialAdminPassword
+exit
+```
+
+- The administrator password can also be taken from docker logs 
+
+```bash
+docker logs jenkins
+```
+
+- Enter the temporary password to unlock the Jenkins
+ 
+- Install suggested plugins
+ 
+- Create first admin user (call-jenkins:Call-jenkins1234)
+ 
+- Check the URL, then save and finish the installation
 
 ## Part 3 - Open Jenkins dashboard and explain plugins and other jenkins menu elements
 

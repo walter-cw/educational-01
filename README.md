@@ -50,19 +50,16 @@ ssh -i .ssh/call-training.pem ec2-user@ec2-3-133-106-98.us-east-2.compute.amazon
 
 * To create a Jenkins freestyle job, open your Jenkins installation path. It will be hosted on <b>http://localhost:8080</b> or <b>http://ec2-ip-address:8080</b> If you have installed to different port, please use this port number. Then log on to your Jenkins dashboard with username and password.
 
-<img src="https://media.clarusway.com/Jenkins/3-1-1-1-browser.png">
 
 * Open your Jenkins dashboard and click on <b>New Item</b> to create a new item.
 
-<img src="https://media.clarusway.com/Jenkins/3-1-2-create-a-new-item.png">
 
 
 
 * Enter the <b>item name</b> then select <b>free style project</b> and click to <b>OK</b>.
 
-<img src="https://media.clarusway.com/Jenkins/3-2-2.png">
 
-
+```
 While creating first Project you will see four tab. These are:
 
 1. Source Code Management Tab : optional SCM, such as CVS or Subversion where your source code resides.
@@ -70,26 +67,23 @@ While creating first Project you will see four tab. These are:
 3. Build Environment: Some sort of build script that performs the build (ant, maven, shell script, batch file, etc.) where the real work happens
 4. Build : Optional steps to collect information out of the build, such as archiving the artifacts and/or recording javadoc and test results.
 5. Post-build Actions : Optional steps to notify other people/systems with the build result, such as sending e-mails, IMs, updating issue tracker, etc.
-
+```
 
 * Specify your Jenkins project's <b>description</b>. Then go to <b>Build</b>.
 
 
-<img src="https://media.clarusway.com/Jenkins/3-+description.png">
 
 
 
 * Choose appropriate build step from "Add build step". It depends on your operating system.  If you are windows user you can choose <b>Execute Windows batch command</b> or if you are using  Linux or MacOS operating system, you can choose <b>Execute shell</b>.
 
 
-|<center><img src="https://media.clarusway.com/Jenkins/3-build.png" class="img-fluid" alt=""></center>|
 
 
 
 * When you select the build step, command space will be shown. Write down just <b>echo "Hello World"</b> to execute shell command/windows batch command.
 
 
-|<center><img src="https://media.clarusway.com/Jenkins/jenkins-build-command.png" class="img-fluid" alt=""></center>|
 
 
 
@@ -98,35 +92,22 @@ While creating first Project you will see four tab. These are:
 * After that you will see inside of the Project. Then click to <b>Build now</b> and wait e few seconds. You will see result of this build action under the **Build History**
 
 
-|<center><img src="https://media.clarusway.com/Jenkins/3-build-now.png" class="img-fluid" alt=""></center>|
 
 
 
 * As we mentioned above you will see the results of the build. If you click to the build number, you can reach build page. If you see the number blue that means build worked well.
 
 
-|<center><img src="https://media.clarusway.com/Jenkins/3-build-history.png" class="img-fluid" alt=""></center>|
 
 
 
 * From build page you can see console results from "Console Output".
 
 
-|<center><img src="https://media.clarusway.com/Jenkins/3-console-output1.png" class="img-fluid" alt=""></center>|
 
 
 
 * You can see results of your build. As you can see our result our job printed out to "Hello World" and it finished with "SUCCESS".
 
 
-|<center><img src="https://media.clarusway.com/Jenkins/3-console-output.png" class="img-fluid" alt=""></center>|
-```{r, echo=FALSE}
-# Define variable containing url
-url <- "https://media.clarusway.com/Jenkins/3-console-output.png"
-```
-## Some cat!
-<center><img src="`r url`"></center>
-
-## Alternatively...
-![](`r url`)
 

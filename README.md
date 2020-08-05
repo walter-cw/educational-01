@@ -28,7 +28,7 @@ At the end of the this hands-on training, students will be able to;
 ssh -i .ssh/call-training.pem ec2-user@ec2-3-133-106-98.us-east-2.compute.amazonaws.com
 ```
 
-## Part 2 - Install Docker on Amazon Linux 2 EC2 Instance
+## Part 2 - Install Jenkins on Amazon Linux 2 EC2 Instance using Docker
 
 
 ## Part 3 - Open Jenkins dashboard and explain plugins and other jenkins menu elements
@@ -120,4 +120,13 @@ While creating first Project you will see four tab. These are:
 
 
 |<center><img src="https://media.clarusway.com/Jenkins/3-console-output.png" class="img-fluid" alt=""></center>|
+```{r, echo=FALSE}
+# Define variable containing url
+url <- "https://media.clarusway.com/Jenkins/3-console-output.png"
+```
+## Some cat!
+<center><img src="`r url`"></center>
+
+## Alternatively...
+![](`r url`)
 

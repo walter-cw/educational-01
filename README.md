@@ -4,7 +4,7 @@ The freestyle build job is a highly flexible and easy-to-use option. You can use
 
  1 - To create a Jenkins freestyle job, open your Jenkins installation path. It will be hosted on <b>http://localhost:8080</b> or <b>http://ec2-ip-address:8080</b> If you have installed to different port, please use this port number. Then log on to your Jenkins dashboard with username and password.
 
-<center><img src="https://media.clarusway.com/Jenkins/3-1-1-1-browser.png"></center>
+[<img src="https://media.clarusway.com/Jenkins/3-1-1-1-browser.png">]
 
 <div class="alert alert-success" role="alert">  
 2 - Open your Jenkins dashboard and click on <b>New Item</b> to create a new item.
